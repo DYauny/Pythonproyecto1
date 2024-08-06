@@ -27,5 +27,5 @@ urlpatterns = [
     path('dia_de_hoy/', dia_de_hoy),
     path('minombrees/<nombre>', minombrees),
     path('probandotemplate/', probandotemplate),
-    path('cargadores',probandocargadores),
+    path('cargadores', probandocargadores),
 ]

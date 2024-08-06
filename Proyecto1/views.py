@@ -40,7 +40,7 @@ def probandotemplate(self):
     apellido = "Yauny"
     listadenotas = 2,2,3,7,2,5
     diccionario = {"nomb":nombre, "ape":apellido, "dia": dia, "lista": listadenotas}
-    miHtml = open (r"C:\Users\danie\Escritorio\Pythonproyecto1\Proyecto1\plantillas\template1.html")
+    miHtml = open (r"C:\Users\danie\Escritorio\Pythonproyecto1\plantillas\template1.html")
     plantilla = Template(miHtml.read())
     miHtml.close()
     micontexto = Context(diccionario)
@@ -54,11 +54,11 @@ def probandocargadores(request):
     nombre = "Daniel"
     apellido = "Yauny"
     
-    context = {"nomb": nombre, "ape": apellido}
+    contexto = {"nomb": nombre, "ape": apellido}
     
     plantilla = loader.get_template("template2.html")
-    
-    documento = plantilla.render(context)
+       
+    documento = plantilla.render(contexto)
     
     return HttpResponse(documento)
     
