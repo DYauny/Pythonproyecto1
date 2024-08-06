@@ -8,7 +8,29 @@
 </head>
 <body>
     <h1> ESTOY TRABAJANDO CON PYTHON, DJANGO Y HTML </h1>
+    
+
+    <p>Mi nombre es: {{nomb}}</p>
+    <p>Mi apellido es: {{ape}}</p>
+
+    
+    {% for nota in lista %}
+        
+        {% if nota < 4 %}
+                        
+        <p style="color: red;"> Desaprobado: {{nota}} </p>
+
+        {% else %}
+
+        <p style="color: green;"> Aprobado: {{nota}} </p>
+
+        {% endif %}
+        
+    {% endfor %}
+        
+
+
+    <p>Este template fue creado el: {{dia}}</p>
 </body>
 </html>
 
-!

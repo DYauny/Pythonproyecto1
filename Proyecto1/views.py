@@ -1,7 +1,9 @@
 
+
+from datetime import datetime
 from django.http import HttpResponse
-from django.template import Template, Context
-import datetime 
+from django.template import Template, Context, loader
+ 
 
 
 def dia_de_hoy(request):
@@ -32,10 +34,35 @@ def camarografos(request):
 
 
 def probandotemplate(self):
+    
+    dia = datetime.now()
+    nombre = "Daniel"
+    apellido = "Yauny"
+    listadenotas = 2,2,3,7,2,5
+    diccionario = {"nomb":nombre, "ape":apellido, "dia": dia, "lista": listadenotas}
     miHtml = open (r"C:\Users\danie\Escritorio\Pythonproyecto1\Proyecto1\plantillas\template1.html")
     plantilla = Template(miHtml.read())
-    micontexto = Context()
+    miHtml.close()
+    micontexto = Context(diccionario)
     documento = plantilla.render(micontexto)
     return HttpResponse(documento)
+
+
+
+def probandocargadores(request):
+    
+    nombre = "Daniel"
+    apellido = "Yauny"
+    
+    context = {"nomb": nombre, "ape": apellido}
+    
+    plantilla = loader.get_template("template2.html")
+    
+    documento = plantilla.render(context)
+    
+    return HttpResponse(documento)
+    
+    
+    
 
 
